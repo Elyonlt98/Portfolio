@@ -536,7 +536,6 @@ body:not(.user-is-tabbing) a:focus {
 .cert__list {
     display: flex; /* Ensures list items are on one line */
     gap: 1rem; /* Adds spacing between items */
-    white-space: nowrap; /* Prevents wrapping */
 }
 
 .cert__code {
