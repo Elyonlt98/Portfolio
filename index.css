@@ -524,6 +524,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .cert__list {
+    white-space: nowrap;
     display: flex; /* Ensures list items are displayed in a row */
     gap: 1rem; /* Adds spacing between list items */
 }
