@@ -505,6 +505,51 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
+
+/* --------------------------------------- */
+/* ----- Certification ----- */
+/* --------------------------------------- */
+
+.cert__box {
+    display: flex;
+    align-items: center;
+}
+
+.cert__box:not(:last-child) {
+    margin-bottom: 25rem;
+}
+
+.cert__links {
+    display: flex;
+    align-items: center;
+}
+
+.cert__text {
+    flex: 0 0 30%;
+}
+
+.cert__list {
+    /* list-style-type: square; */
+    list-style-position: inside;
+    margin-bottom: var(--gutter-normal);
+}
+
+.cert__code {
+    display: block;
+    height: 3rem;
+    margin-left: var(--gutter-normal);
+    transition: all .3s;
+}
+
+.cert__code:hover {
+    transform: scale(1.2);
+}
+
+.cert__image-box {
+    margin-bottom: var(--gutter-normal);
+}
+
+
 /* --------------------------------------- */
 /* ----- About ----- */
 /* --------------------------------------- */
