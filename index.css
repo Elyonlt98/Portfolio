@@ -514,7 +514,6 @@ body:not(.user-is-tabbing) a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Ensures proper spacing between items */
-    flex-wrap: nowrap; /* Prevents wrapping of child elements */
     width: 100%; /* Ensures the box spans the available width */
     overflow: hidden; /* Prevents overflow content */
 }
@@ -526,13 +525,6 @@ body:not(.user-is-tabbing) a:focus {
     text-overflow: ellipsis; /* Displays ellipsis for overflow text */
 }
 
-.cert__links {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap; /* Prevents wrapping of links */
-    gap: 1rem; /* Adds spacing between links */
-}
-
 .cert__list {
     display: flex; /* Ensures list items are on one line */
     gap: 1rem; /* Adds spacing between items */
@@ -541,7 +533,6 @@ body:not(.user-is-tabbing) a:focus {
 .cert__code {
     margin-left: var(--gutter-normal);
     display: inline-block; /* Ensures it stays inline */
-    white-space: nowrap; /* Prevents wrapping */
 }
 
 /* --------------------------------------- */
