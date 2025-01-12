@@ -513,24 +513,36 @@ body:not(.user-is-tabbing) a:focus {
 .cert__box {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures proper spacing between elements */
-    flex-wrap: nowrap; /* Prevents wrapping */
+    justify-content: space-between; /* Ensures proper spacing between items */
+    flex-wrap: nowrap; /* Prevents wrapping of child elements */
+    width: 100%; /* Ensures the box spans the available width */
+    overflow: hidden; /* Prevents overflow content */
 }
 
-.cert__text, .cert__links {
-    white-space: nowrap; /* Prevents wrapping of text */
-    overflow: hidden; /* Hides overflowing content */
-    text-overflow: ellipsis; /* Adds ellipsis for truncated text */
+.cert__text {
+    flex-shrink: 0; /* Prevents the text from shrinking */
+    white-space: nowrap; /* Ensures the text stays on one line */
+    overflow: hidden; /* Hides overflow content */
+    text-overflow: ellipsis; /* Displays ellipsis for overflow text */
+}
+
+.cert__links {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevents wrapping of links */
+    gap: 1rem; /* Adds spacing between links */
 }
 
 .cert__list {
-    white-space: nowrap;
-    display: flex; /* Ensures list items are displayed in a row */
-    gap: 1rem; /* Adds spacing between list items */
+    display: flex; /* Ensures list items are on one line */
+    gap: 1rem; /* Adds spacing between items */
+    white-space: nowrap; /* Prevents wrapping */
 }
 
 .cert__code {
-    margin-left: var(--gutter-normal); /* Adjusts spacing for consistent layout */
+    margin-left: var(--gutter-normal);
+    display: inline-block; /* Ensures it stays inline */
+    white-space: nowrap; /* Prevents wrapping */
 }
 
 /* --------------------------------------- */
