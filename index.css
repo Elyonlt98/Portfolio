@@ -513,43 +513,24 @@ body:not(.user-is-tabbing) a:focus {
 .cert__box {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Ensures proper spacing between elements */
+    flex-wrap: nowrap; /* Prevents wrapping */
 }
 
-.cert__box:not(:last-child) {
-    margin-bottom: 25rem;
-}
-
-.cert__links {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-.cert__text {
-    flex: 0 0 30%;
+.cert__text, .cert__links {
+    white-space: nowrap; /* Prevents wrapping of text */
+    overflow: hidden; /* Hides overflowing content */
+    text-overflow: ellipsis; /* Adds ellipsis for truncated text */
 }
 
 .cert__list {
-    /* list-style-type: square; */
-    list-style-position: inside;
-    margin-bottom: var(--gutter-normal);
+    display: flex; /* Ensures list items are displayed in a row */
+    gap: 1rem; /* Adds spacing between list items */
 }
 
 .cert__code {
-    display: block;
-    height: 3rem;
-    margin-left: var(--gutter-normal);
-    transition: all .3s;
+    margin-left: var(--gutter-normal); /* Adjusts spacing for consistent layout */
 }
-
-.cert__code:hover {
-    transform: scale(1.2);
-}
-
-.cert__image-box {
-    margin-bottom: var(--gutter-normal);
-}
-
 
 /* --------------------------------------- */
 /* ----- About ----- */
