@@ -513,26 +513,37 @@ body:not(.user-is-tabbing) a:focus {
 .cert__box {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures proper spacing between items */
-    width: 100%; /* Ensures the box spans the available width */
-    overflow: hidden; /* Prevents overflow content */
+}
+
+.cert__box:not(:last-child) {
+    margin-bottom: 25rem;
+}
+
+.cert__links {
+    display: flex;
+    align-items: center;
 }
 
 .cert__text {
-    flex-shrink: 0; /* Prevents the text from shrinking */
-    white-space: nowrap; /* Ensures the text stays on one line */
-    overflow: hidden; /* Hides overflow content */
-    text-overflow: ellipsis; /* Displays ellipsis for overflow text */
+    flex: 0 0 30%;
+    white-space:nowrap
 }
 
 .cert__list {
-    display: flex; /* Ensures list items are on one line */
-    gap: 1rem; /* Adds spacing between items */
+    /* list-style-type: square; */
+    list-style-position: inside;
+    margin-bottom: var(--gutter-normal);
 }
 
 .cert__code {
+    display: block;
+    height: 3rem;
     margin-left: var(--gutter-normal);
-    display: inline-block; /* Ensures it stays inline */
+    transition: all .3s;
+}
+
+.cert__code:hover {
+    transform: scale(1.2);
 }
 
 /* --------------------------------------- */
