@@ -73,11 +73,11 @@ p { margin: 0 0 1em; }
 sub { font-size: 0.7em; line-height: 0; }
 kbd { font-family: var(--display); font-weight: 600; font-size: 1em; padding: 1px 7px; border-radius: 3px; background: rgba(255,255,255,0.14); }
 
-/* Justified reading text, with hyphenation to keep spacing even */
-.about__lead p:not(.statement), .research__lede, .research__notes li, .role p, .role li, .work li, .refs li, .contact__text {
-  text-align: justify; hyphens: auto; -webkit-hyphens: auto;
+/* All reading text is justified; hyphenation keeps the word spacing even */
+p, li, dd, figcaption, blockquote, .step span {
+  text-align: justify; text-justify: inter-word;
+  hyphens: auto; -webkit-hyphens: auto;
 }
-.role__date, .role__org, .work__meta, .minor__meta, .contact__fine, .intro__lede, .intro__role { text-align: left; hyphens: manual; }
 
 .skip { position: absolute; left: -999px; top: 8px; z-index: 100; background: var(--paper); padding: 8px 12px; }
 .skip:focus { left: 8px; }
@@ -191,7 +191,7 @@ kbd { font-family: var(--display); font-weight: 600; font-size: 1em; padding: 1p
 /* ---------------- 2. About ---------------- */
 .panel--about { background: var(--paper); }
 .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px clamp(32px, 6vw, 96px); align-items: start; min-height: 100%; align-content: center; }
-.statement { font-size: var(--fs-statement); line-height: 1.32; margin-bottom: 0.9em; text-align: left; hyphens: manual; }
+.statement { font-size: var(--fs-statement); line-height: 1.32; margin-bottom: 0.9em; }
 .about__lead p:not(.statement) { max-width: 40em; }
 .about__side { background: var(--white); padding: clamp(24px, 3vw, 40px); }
 .skills { margin: 0 0 28px; }
@@ -215,8 +215,9 @@ kbd { font-family: var(--display); font-weight: 600; font-size: 1em; padding: 1p
 .setup { display: block; width: 100%; height: auto; }
 .setup .part, .setup .overlay { transition: opacity 380ms ease; }
 .setup .overlay { opacity: 0; }
-.setup.has-step .part { opacity: 0.16; }
-.setup.has-step .part.on, .setup .overlay.on { opacity: 1; }
+.setup .overlay.on { opacity: 1; }
+.setup .callout { stroke-dasharray: 7 5; animation: march 1.2s linear infinite; }
+@keyframes march { to { stroke-dashoffset: -24; } }
 .setup .interlayer.on { animation: layerPulse 1.6s ease-in-out infinite; }
 @keyframes layerPulse { 50% { fill: #ffcf9e; } }
 .setup .beam { animation: beamFlicker 2.6s ease-in-out infinite; }
@@ -317,7 +318,7 @@ kbd { font-family: var(--display); font-weight: 600; font-size: 1em; padding: 1p
 /* ---------------- 7. Contact (laser chapter) ---------------- */
 .panel--contact { background: var(--laser); color: var(--ink); }
 .contact { display: flex; flex-direction: column; min-height: 100%; }
-.contact__text { font-size: var(--fs-lead); line-height: 1.4; max-width: 30em; text-align: left; hyphens: manual; }
+.contact__text { font-size: var(--fs-lead); line-height: 1.4; max-width: 30em; }
 .contact__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
 .contact__name {
   margin: auto 0 0; padding-top: 48px;
@@ -433,7 +434,6 @@ kbd { font-family: var(--display); font-weight: 600; font-size: 1em; padding: 1p
   .panel--intro { background-image: linear-gradient(180deg, rgba(8,12,22,0.25) 0%, rgba(8,12,22,0.78) 52%, rgba(8,12,22,0.96) 100%), url("img/hero-1200.webp"); /* taste-skill-ignore: neutral scrim on the hero photo */ background-position: 76% center; }
   .hint { bottom: 28px; }
   .statement { font-size: var(--fs-lead); }
-  .research__notes li, .role li, .work li, .refs li { text-align: left; hyphens: manual; }
   .setup .labels, .setup .leaders { display: none; }
   .fig__legend { display: inline; }
   .contact__name { white-space: normal; }
@@ -448,6 +448,6 @@ kbd { font-family: var(--display); font-weight: 600; font-size: 1em; padding: 1p
   .js .setup .leader { stroke-dashoffset: 0; animation: none; }
   .js .setup .labels text { opacity: 1; transition: none; }
   .js .hint { animation: none; opacity: 1; }
-  .setup .beam, .setup .hotspot, .setup .interlayer.on, .js .panel.seen .hint__line::after { animation: none; }
+  .setup .beam, .setup .hotspot, .setup .interlayer.on, .setup .callout, .js .panel.seen .hint__line::after { animation: none; }
   .btn, .step, .step::before, .pager__btn, .role::before, .setup .part, .setup .overlay { transition: none; }
 }

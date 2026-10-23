@@ -23,7 +23,7 @@
 
   <link rel="preload" href="fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="img/hero.webp" as="image">
-  <link rel="stylesheet" href="index.css?v=5">
+  <link rel="stylesheet" href="index.css?v=6">
   <script>document.documentElement.classList.add("js");</script>
 </head>
 
@@ -175,6 +175,13 @@
     </g>
   </g>
 
+  <!-- dashed callouts: where each step happens; the rest of the schematic stays visible -->
+  <g fill="none" stroke="#e8590c" stroke-width="2">
+    <rect class="overlay callout" data-steps="1 2" x="300" y="266" width="30" height="74" rx="5"/>
+    <rect class="overlay callout" data-steps="3" x="160" y="266" width="350" height="104" rx="6"/>
+    <rect class="overlay callout" data-steps="4" x="282" y="94" width="352" height="276" rx="8"/>
+    <rect class="overlay callout" data-steps="5" x="282" y="252" width="66" height="104" rx="6"/>
+  </g>
   <!-- shear-test arrows, shown for the test step -->
   <g class="overlay" data-steps="5" stroke="#e8590c" stroke-width="3" fill="none" marker-end="url(#arrow)">
     <path d="M190 262 L292 262"/>
@@ -411,6 +418,6 @@
   <div class="wipe" aria-hidden="true"></div>
 
 
-  <script src="index.js?v=5"></script>
+  <script src="index.js?v=6"></script>
 </body>
 </html>
