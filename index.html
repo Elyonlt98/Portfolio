@@ -22,13 +22,15 @@
   <meta name="theme-color" content="#101a2c">
 
   <link rel="preload" href="fonts/archivo-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="index.css?v=3">
+  <link rel="stylesheet" href="index.css?v=4">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
   <header class="nav" id="top">
+    <span class="nav__progress" aria-hidden="true"></span>
     <a class="nav__name" href="#top">Lakshya Tiwari</a>
     <nav aria-label="Sections">
       <ul class="nav__links">
@@ -58,8 +60,8 @@
     <!-- About -->
     <section class="section about" id="about">
       <div class="wrap split">
-        <h2 class="section__title">About</h2>
-        <div class="about__body">
+        <h2 class="section__title reveal">About</h2>
+        <div class="about__body reveal">
           <p>I am a mechanical engineer and PhD researcher at The University of Texas at Dallas, focused on joining silicon carbide ceramics reliably enough for use in high-temperature assemblies. My doctoral work spans the full process chain, from the design of joining compositions to automation of the laser process and mechanical characterization of the joints.</p>
           <p>Before beginning my PhD, I spent two years developing medical devices in an FDA-regulated, ISO 13485 environment for clients including Baxter and Smith &amp; Nephew. That experience instilled a disciplined approach to design for manufacturing and rigorous documentation, which I now apply to my research.</p>
           <dl class="skills">
@@ -78,38 +80,128 @@
       <div class="wrap">
         <div class="sheet">
           <div class="sheet__head">
-            <h2 class="section__title">Current research</h2>
-            <p class="sheet__lede">My PhD research develops a laser-assisted process for joining silicon carbide (SiC) ceramics for high-temperature structural applications, including semiconductor equipment, aerospace and defense, and industrial heat exchangers.</p>
+            <div class="sheet__intro">
+              <h2 class="section__title reveal">Current research</h2>
+              <p class="sheet__lede">My PhD research develops a laser-assisted process for joining silicon carbide (SiC) ceramics for high-temperature structural applications, including semiconductor equipment, aerospace and defense, and industrial heat exchangers.</p>
+            </div>
+            <table class="titleblock" aria-label="Project details">
+              <tr><th scope="row">Project</th><td>Laser-assisted joining of SiC ceramics</td></tr>
+              <tr><th scope="row">Lab</th><td>The University of Texas at Dallas</td></tr>
+              <tr><th scope="row">Program</th><td>PhD, Mechanical Engineering</td></tr>
+              <tr><th scope="row">Status</th><td>In progress, 2026 to 2030</td></tr>
+            </table>
           </div>
 
-          <figure class="fig fig--setup">
-            <div class="fig__scroll"><img src="img/fig-setup.svg" width="680" height="390" alt="Schematic of the setup: an industrial robot holds a diode laser head above two SiC parts on a fixture, with a tape-cast interlayer between them. The focused beam scans along the seam."></div>
+          <figure class="fig fig--setup reveal">
+            <div class="fig__scroll">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 44 680 372" class="setup-svg" role="img" aria-labelledby="fig1-t fig1-d">
+  <title id="fig1-t">Laser joining setup, schematic</title>
+  <desc id="fig1-d">An industrial robot holds a diode laser head above two silicon carbide parts on a fixture. A tape-cast interlayer sits between the parts, and the laser beam is focused on the seam. The beam scans along the seam, into the page.</desc>
+  <defs>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#15202e" stroke-width="1" opacity=".55"/>
+    </pattern>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a4d" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#e8590c" stop-opacity=".95"/>
+    </linearGradient>
+    <radialGradient id="hot" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fff1dc"/>
+      <stop offset=".35" stop-color="#ffb26b" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#e8590c" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="dot" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5"><circle cx="4" cy="4" r="3" fill="#15202e"/></marker>
+  </defs>
+
+  <g fill="none" stroke="#15202e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+    <!-- floor line -->
+    <line x1="40" y1="362" x2="640" y2="362" stroke-width="1" stroke-dasharray="2 4"/>
+    <!-- fixture plate -->
+    <rect x="120" y="330" width="380" height="20" fill="url(#hatch)"/>
+    <line x1="150" y1="350" x2="150" y2="362"/><line x1="470" y1="350" x2="470" y2="362"/>
+
+    <!-- SiC parts -->
+    <rect x="170" y="276" width="140" height="54" fill="#3a404a"/>
+    <rect x="320" y="276" width="140" height="54" fill="#3a404a"/>
+    <!-- interlayer -->
+    <rect x="310" y="276" width="10" height="54" fill="#f0a35e" stroke-width="1.2"/>
+
+    <!-- robot base and arm -->
+    <rect x="548" y="318" width="76" height="44" fill="#e3e8ee"/>
+    <rect x="566" y="296" width="40" height="22" fill="#e3e8ee"/>
+    <path d="M586 296 L548 168" stroke-width="14" stroke="#15202e"/>
+    <path d="M586 296 L548 168" stroke-width="10" stroke="#e3e8ee"/>
+    <path d="M548 168 L420 120" stroke-width="12" stroke="#15202e"/>
+    <path d="M548 168 L420 120" stroke-width="8" stroke="#e3e8ee"/>
+    <circle cx="586" cy="296" r="11" fill="#e3e8ee"/>
+    <circle cx="548" cy="168" r="11" fill="#e3e8ee"/>
+    <circle cx="420" cy="120" r="9" fill="#e3e8ee"/>
+    <path d="M420 120 L366 128" stroke-width="6"/>
+    <rect x="356" y="120" width="12" height="18" fill="#15202e"/>
+
+    <!-- laser head -->
+    <rect x="292" y="104" width="66" height="78" rx="4" fill="#e3e8ee"/>
+    <line x1="300" y1="122" x2="350" y2="122" stroke-width="1"/>
+    <path d="M303 182 L347 182 L333 204 L317 204 Z" fill="#e3e8ee"/>
+  </g>
+
+  <!-- beam -->
+  <path class="beam" d="M318 204 L332 204 L326 276 L324 276 Z" fill="url(#beam)"/>
+  <circle class="hotspot" cx="325" cy="277" r="16" fill="url(#hot)"/>
+
+  <!-- scan direction: into page -->
+  <g class="scan" stroke="#15202e" stroke-width="1.4" fill="#f3f5f7">
+    <circle cx="372" cy="250" r="9"/>
+    <path d="M366 244 L378 256 M378 244 L366 256" fill="none"/>
+  </g>
+
+  <!-- leaders + labels -->
+  <g class="leaders" fill="none" stroke="#15202e" stroke-width="1" marker-end="url(#dot)">
+    <path class="leader" pathLength="1" d="M170 92 L230 92 L296 128"/>
+    <path class="leader" pathLength="1" d="M170 196 L250 196 L321 240"/>
+    <path class="leader" pathLength="1" d="M104 246 L150 246 L210 300"/>
+    <path class="leader" pathLength="1" d="M176 396 L250 396 L314 318"/>
+    <path class="leader" pathLength="1" d="M96 330 L112 330 L130 338"/>
+    <path class="leader" pathLength="1" d="M560 62 L520 62 L488 142"/>
+  </g>
+  <g class="labels" font-family="Archivo, Arial, sans-serif" font-size="14" fill="#15202e">
+    <text x="40" y="96">Diode laser head</text>
+    <text x="40" y="200">Focused beam</text>
+    <text x="40" y="250">SiC part</text>
+    <text x="40" y="400">Tape-cast interlayer</text>
+    <text x="40" y="334">Fixture</text>
+    <text x="566" y="66">Industrial robot</text>
+    <text x="390" y="247">Scan along seam</text>
+    <text x="390" y="263">(into page)</text>
+  </g>
+</svg>
+            </div>
             <figcaption>Fig. 1. Joining setup. Schematic, not to scale.</figcaption>
           </figure>
 
-          <figure class="fig fig--process">
+          <figure class="fig fig--process reveal">
             <ol class="process">
-              <li>
+              <li style="--i:0">
                 <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="36" height="36"/><path d="M18 6v36M30 6v36M6 18h36M6 30h36"/></g><g fill="#e8590c"><circle cx="12" cy="12" r="3"/><circle cx="36" cy="24" r="3"/><circle cx="24" cy="36" r="3"/></g></svg>
                 <h3>Design compositions</h3>
                 <p>Screen joining formulations through design of experiments.</p>
               </li>
-              <li>
+              <li style="--i:1">
                 <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M4 34h40M4 38h40"/><path d="M20 8h14l-4 22h-6z"/></g><path d="M6 34c4-3 8-3 12 0" fill="none" stroke="#e8590c" stroke-width="2"/></svg>
                 <h3>Cast interlayers</h3>
                 <p>Tape cast interlayers with a doctor blade, controlling thickness and uniformity.</p>
               </li>
-              <li>
+              <li style="--i:2">
                 <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="18" width="18" height="16"/><rect x="26" y="18" width="18" height="16"/></g><rect x="22" y="18" width="4" height="16" fill="#e8590c"/></svg>
                 <h3>Assemble the joint</h3>
                 <p>Fixture both SiC parts with the interlayer at the seam.</p>
               </li>
-              <li>
+              <li style="--i:3">
                 <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="28" width="18" height="12"/><rect x="26" y="28" width="18" height="12"/><path d="M18 4h12v8l-3 6h-6l-3-6z"/></g><path d="M22 18h4l-1 10h-2z" fill="#e8590c"/></svg>
                 <h3>Join with the laser</h3>
                 <p>Run robot-automated diode laser sequences for repeatable joints.</p>
               </li>
-              <li>
+              <li style="--i:4">
                 <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="16" width="32" height="16"/><path d="M24 16v16"/><path d="M2 12h14l-4-4M46 36H32l4 4"/></g><path d="M24 16v16" stroke="#e8590c" stroke-width="2"/></svg>
                 <h3>Test and analyze</h3>
                 <p>Evaluate joints by shear testing, thermal cycling and fractography.</p>
@@ -118,7 +210,7 @@
             <figcaption>Fig. 2. Process chain. Test results feed the next round of composition design.</figcaption>
           </figure>
 
-          <div class="sheet__notes">
+          <div class="sheet__notes reveal">
             <h3>Key responsibilities</h3>
             <ul>
               <li>Set up and operate the diode laser joining system with an industrial robot, including I/O integration and motion programming.</li>
@@ -128,12 +220,6 @@
             </ul>
           </div>
 
-          <table class="titleblock" aria-label="Project details">
-            <tr><th scope="row">Project</th><td>Laser-assisted joining of SiC ceramics</td></tr>
-            <tr><th scope="row">Lab</th><td>The University of Texas at Dallas</td></tr>
-            <tr><th scope="row">Program</th><td>PhD, Mechanical Engineering</td></tr>
-            <tr><th scope="row">Status</th><td>In progress, 2026 to 2030</td></tr>
-          </table>
         </div>
       </div>
     </section>
@@ -141,16 +227,16 @@
     <!-- Experience -->
     <section class="section experience" id="experience">
       <div class="wrap split">
-        <h2 class="section__title">Experience</h2>
+        <h2 class="section__title reveal">Experience</h2>
         <div>
           <ol class="timeline">
-            <li class="timeline__item timeline__item--now">
+            <li class="reveal timeline__item timeline__item--now">
               <p class="timeline__date">Jan 2026 to present</p>
               <h3>Research Assistant</h3>
               <p class="timeline__org">The University of Texas at Dallas</p>
               <p>Developing a laser-assisted process for joining SiC ceramics, covering composition design, tape casting, robot-automated laser joining and joint characterization.</p>
             </li>
-            <li class="timeline__item">
+            <li class="reveal timeline__item">
               <p class="timeline__date">Sep 2023 to Nov 2025</p>
               <h3>Mechanical Engineer</h3>
               <p class="timeline__org">BCVS Group, for clients including Baxter and Smith &amp; Nephew</p>
@@ -161,19 +247,19 @@
                 <li>Maintained design history files, BOMs and change orders in PLM; ran FEA, lifecycle testing and rapid prototyping.</li>
               </ul>
             </li>
-            <li class="timeline__item">
+            <li class="reveal timeline__item">
               <p class="timeline__date">Jun 2023 to Aug 2023</p>
               <h3>Mechanical Engineer</h3>
               <p class="timeline__org">Solinst Canada</p>
               <p>Designed packer components in 3D CAD through iterative prototyping and testing, and ran CFD simulations to improve flow performance and structural integrity.</p>
             </li>
-            <li class="timeline__item">
+            <li class="reveal timeline__item">
               <p class="timeline__date">Oct 2021 to May 2023</p>
               <h3>Research Assistant</h3>
               <p class="timeline__org">Lab of Manufacturing Innovation, Arizona State University</p>
               <p>Worked on electrically assisted 3D printing of metal–polymer composites, photocurable resin formulation, and Sb<sub>2</sub>Te<sub>3</sub> processing by controlled heat pressing.</p>
             </li>
-            <li class="timeline__item">
+            <li class="reveal timeline__item">
               <p class="timeline__date">May 2018 to Jul 2018</p>
               <h3>Engine Overhaul Intern</h3>
               <p class="timeline__org">Air India</p>
@@ -181,8 +267,8 @@
             </li>
           </ol>
 
-          <h3 class="subhead">Education</h3>
-          <ul class="edu">
+          <h3 class="subhead reveal">Education</h3>
+          <ul class="edu reveal">
             <li><span class="edu__deg">PhD, Mechanical Engineering</span><span class="edu__school">The University of Texas at Dallas</span><span class="edu__date">2026 to 2030, expected</span></li>
             <li><span class="edu__deg">MS, Aerospace Engineering</span><span class="edu__school">Arizona State University</span><span class="edu__date">2021 to 2023</span></li>
             <li><span class="edu__deg">BTech, Aerospace Engineering</span><span class="edu__school">SRM Institute of Science and Technology</span><span class="edu__date">2016 to 2020</span></li>
@@ -194,9 +280,9 @@
     <!-- Projects -->
     <section class="section projects" id="projects">
       <div class="wrap">
-        <h2 class="section__title">Selected projects</h2>
+        <h2 class="section__title reveal">Selected projects</h2>
 
-        <article class="project">
+        <article class="reveal project">
           <div class="project__media"><img src="img/thesis.webp" width="1200" height="1067" loading="lazy" alt="EDS element maps and SEM micrographs of copper deposited on 3D-printed polymer structures"></div>
           <div class="project__text">
             <p class="project__meta">Master's thesis, Arizona State University, 2023</p>
@@ -212,7 +298,7 @@
           </div>
         </article>
 
-        <article class="project project--flip">
+        <article class="reveal project project--flip">
           <div class="project__media"><img src="img/thermoelectric.webp" width="1200" height="697" loading="lazy" alt="SEM fracture surfaces of Sb₂Te₃ samples, sintered and non-sintered, pressed at 500 N and 1000 N"></div>
           <div class="project__text">
             <p class="project__meta">Journal of Material Science and Technology Research, 2022</p>
@@ -226,7 +312,7 @@
           </div>
         </article>
 
-        <article class="project">
+        <article class="reveal project">
           <div class="project__media project__media--tall"><img src="img/chapter.webp" width="878" height="1125" loading="lazy" alt="Figure panels from the book chapter showing direct ink writing equipment and printed composite parts"></div>
           <div class="project__text">
             <p class="project__meta">Book chapter, Woodhead Publishing (Elsevier), 2024</p>
@@ -239,7 +325,7 @@
           </div>
         </article>
 
-        <article class="project project--flip">
+        <article class="reveal project project--flip">
           <div class="project__media"><img src="img/nozzle.webp" width="853" height="589" loading="lazy" alt="Engineering drawing of the converging-diverging nozzle with inlet, outlet and cross-section views"></div>
           <div class="project__text">
             <p class="project__meta">IOP Conference Series, 2020</p>
@@ -252,8 +338,8 @@
           </div>
         </article>
 
-        <h3 class="subhead">More projects</h3>
-        <ul class="minor">
+        <h3 class="subhead reveal">More projects</h3>
+        <ul class="minor reveal">
           <li>
             <h4>Neural-network trajectory optimization for rocket landing</h4>
             <p class="minor__meta">PyTorch, 2022</p>
@@ -286,8 +372,8 @@
     <!-- Publications -->
     <section class="section pubs" id="publications">
       <div class="wrap split">
-        <h2 class="section__title">Publications</h2>
-        <ol class="refs">
+        <h2 class="section__title reveal">Publications</h2>
+        <ol class="refs reveal">
           <li>Tang, T., Nipu, S. M. A., <strong>Tiwari, L.</strong>, Yoo, M., and Li, X. (2025). Effects of polymer matrix structures on metallic growth in electrically assisted vat photopolymerization for heterogeneous metal–polymer printing. <em>Journal of Micro and Nano Science and Engineering</em>, 13(4), 041009. ASME. <a href="https://par.nsf.gov/biblio/10634366" target="_blank" rel="noopener">Link</a></li>
           <li>Tang, T., Joralmon, D., <strong>Tiwari, L.</strong>, Ravishekar, R., He, Q., Pham, L., Yang, Y., and Li, X. (2024). Additive manufacturing of polymer matrix composites via direct ink writing process. In <em>Additive Manufacturing of Polymer-Based Composite Materials</em>, pp. 203–246. Woodhead Publishing. <a href="https://doi.org/10.1016/B978-0-443-15917-6.00007-4" target="_blank" rel="noopener">DOI</a></li>
           <li><strong>Tiwari, L.</strong> (2023). <em>Physical modeling and simulation of polymeric structures with metallic material printed by electrically assisted vat photopolymerization for property enhancements.</em> Master's thesis, Arizona State University. <a href="https://keep.lib.asu.edu/items/187610" target="_blank" rel="noopener">Link</a></li>
@@ -300,8 +386,8 @@
     <!-- Certifications -->
     <section class="section certs" id="certifications">
       <div class="wrap split">
-        <h2 class="section__title">Certifications</h2>
-        <ul class="certlist">
+        <h2 class="section__title reveal">Certifications</h2>
+        <ul class="certlist reveal">
           <li><a href="ZSSGB121152776 - Lakshya Tiwari.pdf" target="_blank" rel="noopener">Lean Six Sigma Green Belt</a> <span>AIGPE</span></li>
           <li><a href="https://coursera.org/share/e2701b37d0a4b3153dbe3373a89ccd49" target="_blank" rel="noopener">Machine Learning Specialization</a> <span>DeepLearning.AI, Stanford</span></li>
           <li><a href="https://www.coursera.org/account/accomplishments/specialization/PL5TMYSBSCTV" target="_blank" rel="noopener">Statistical Thermodynamics</a> <span>Coursera</span></li>
@@ -338,6 +424,6 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
 
-  <script src="index.js?v=3"></script>
+  <script src="index.js?v=4"></script>
 </body>
 </html>
