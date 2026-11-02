@@ -8,6 +8,7 @@ Live at https://elyonlt98.github.io/Portfolio/
 - `index.html` — single-page site
 - `index.css` — styles (self-hosted Archivo and Source Serif 4, see `fonts/` for licenses)
 - `index.js` — horizontal panel navigation (wheel, trackpad, arrow keys, swipe, tabs), laser-wipe transitions, timeline fill and the interactive process schematic. Without JavaScript the site falls back to a normal vertical page.
-- `img/` — optimized images, schematics (`fig-setup.svg`), favicon and share preview (`og.jpg`)
+- `img/` — optimized images, favicon and share preview (`og.jpg`)
+- `certs/` — certificate PDFs; `LakshyaTiwari_CV.pdf` is the CV linked from the site
 
 No build step: edit the files and push to `main`; GitHub Pages serves them as-is.
